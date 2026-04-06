@@ -1,5 +1,545 @@
-<!-- PRICING SECTION -->
-<section id="pricing" class="section pricing" style="background:var(--bg);">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>Structured Filing Solutions™ — Compliance Infrastructure for Modern Business</title>
+<meta name="description" content="End-to-end South African business registration, compliance, and digital onboarding. One structured engagement from idea to fully operational.">
+
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Outfit:wght@300;400;500&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   ROOT THEME — FUTURISTIC NEON
+============================================================ */
+:root{
+  --bg:#040810;
+  --bg2:#070d1a;
+  --bg3:#0b1221;
+  --surface:rgba(255,255,255,0.04);
+  --surface2:rgba(255,255,255,0.08);
+  --border:rgba(255,255,255,0.1);
+  --border2:rgba(0,210,255,0.3);
+  --cyan:#00d2ff;
+  --cyan2:#00a4d6;
+  --cyanSoft:rgba(0,210,255,0.07);
+  --white:#f0f4f7;
+  --white2:rgba(240,244,248,0.7);
+  --white3:rgba(240,244,248,0.4);
+  --muted:rgba(240,244,248,0.25);
+  --radius:14px;
+  --transition:0.25s ease;
+}
+
+/* RESET */
+*,*::before,*::after{box-sizing:border-box;padding:0;margin:0;}
+body{
+  font-family:'Outfit',sans-serif;
+  background:var(--bg);
+  color:var(--white);
+  line-height:1.7;
+  overflow-x:hidden;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar{width:6px;}
+::-webkit-scrollbar-thumb{background:var(--cyan2);border-radius:4px;}
+
+/* Background grid */
+.grid-bg{
+  position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:
+    linear-gradient(rgba(0,210,255,0.04) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(0,210,255,0.04) 1px,transparent 1px);
+  background-size:80px 80px;
+}
+
+/* ============================================================
+   HEADER
+============================================================ */
+.site-header{
+  position:fixed;top:0;left:0;right:0;
+  padding:0.8rem 0;z-index:50;
+  transition:background 0.3s ease, backdrop-filter 0.3s ease;
+}
+.site-header.scrolled{
+  background:rgba(4,8,16,0.8);
+  backdrop-filter:blur(15px);
+  border-bottom:1px solid var(--border);
+}
+.header-inner{
+  max-width:1400px;margin:0 auto;padding:0 5%;
+  display:flex;justify-content:space-between;align-items:center;
+}
+.brand-logo{
+  width:38px;height:38px;
+  border-radius:10px;
+  background:linear-gradient(135deg,var(--cyan),var(--cyan2));
+  display:flex;align-items:center;justify-content:center;
+  font-family:'JetBrains Mono';font-size:0.8rem;font-weight:700;
+  color:var(--bg);
+}
+.brand-name{font-family:'Syne';font-size:1rem;font-weight:700;}
+.brand-sub{
+  font-family:'JetBrains Mono';font-size:0.55rem;color:var(--cyan);
+  letter-spacing:0.14em;text-transform:uppercase;
+}
+.nav a{
+  color:var(--white3);text-decoration:none;
+  padding:0.4rem 0.8rem;font-size:0.8rem;border-radius:6px;
+}
+.nav a:hover{color:var(--white);background:var(--surface);}
+.nav .cta{
+  margin-left:0.6rem;
+  background:var(--cyan);color:var(--bg);
+  font-weight:600;border-radius:8px;
+  padding:0.5rem 1rem;
+}
+
+/* ============================================================
+   HERO
+============================================================ */
+.hero{
+  min-height:100vh;
+  display:flex;align-items:center;
+  position:relative;overflow:hidden;
+}
+.aurora-blob{
+  position:absolute;border-radius:50%;filter:blur(85px);
+  animation:float 14s ease-in-out infinite;
+}
+.aurora-blob:nth-child(1){
+  width:580px;height:480px;top:-80px;right:-100px;
+  background:radial-gradient(circle,rgba(0,210,255,0.18),transparent 70%);
+}
+.aurora-blob:nth-child(2){
+  width:400px;height:400px;bottom:-60px;left:10%;
+  background:radial-gradient(circle,rgba(10,119,182,0.16),transparent 70%);
+  animation-delay:-5s;
+}
+.aurora-blob:nth-child(3){
+  width:320px;height:320px;top:45%;left:40%;
+  background:radial-gradient(circle,rgba(0,229,160,0.08),transparent 70%);
+  animation-delay:-8s;
+}
+@keyframes float{
+  0%,100%{transform:translate(0,0) scale(1);}
+  50%{transform:translate(40px,-25px) scale(1.05);}
+}
+.hero-content{
+  position:relative;z-index:2;
+  max-width:1400px;margin:0 auto;padding:7rem 5%;
+}
+.hero-tag{
+  display:inline-flex;gap:0.6rem;align-items:center;
+  padding:0.35rem 1rem;border-radius:40px;
+  background:var(--cyanSoft);color:var(--cyan);
+  font-family:'JetBrains Mono';font-size:0.7rem;letter-spacing:0.14em;
+  border:1px solid var(--border2);
+}
+.hero h1{
+  font-family:'Syne';font-size:clamp(3rem,6vw,5.8rem);
+  font-weight:800;line-height:1;margin:1.6rem 0;
+}
+.accent{
+  background:linear-gradient(90deg,var(--cyan),#55eaff,var(--cyan));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  animation:shine 6s linear infinite;background-size:200% auto;
+}
+@keyframes shine{
+  0%{background-position:0%;}
+  100%{background-position:200%;}
+}
+.hero-sub{
+  max-width:520px;color:var(--white2);font-size:1.1rem;
+  margin-bottom:2.4rem;line-height:1.8;
+}
+.hero-cta{display:flex;gap:1rem;flex-wrap:wrap;}
+.btn-primary,.btn-outline{
+  padding:0.9rem 1.8rem;
+  border-radius:8px;text-decoration:none;font-size:0.9rem;
+  font-weight:600;transition:var(--transition);
+}
+.btn-primary{
+  background:var(--cyan);color:var(--bg);
+}
+.btn-outline{
+  background:var(--cyanSoft);color:var(--cyan);
+  border:1px solid var(--border2);
+}
+.hero-metrics{
+  margin-top:3rem;display:flex;
+  border:1px solid var(--border);
+  backdrop-filter:blur(8px);
+  border-radius:12px;overflow:hidden;
+}
+.metric{
+  flex:1;padding:1.5rem;border-right:1px solid var(--border);
+}
+.metric:last-child{border-right:none;}
+.metric-val{font-size:1.7rem;font-family:'Syne';color:var(--cyan);}
+.metric-label{font-size:0.62rem;color:var(--muted);letter-spacing:0.12em;}
+
+/* ============================================================
+   SECTIONS BASE
+============================================================ */
+.section{padding:6rem 0;position:relative;}
+.container{max-width:1200px;margin:0 auto;padding:0 5%;}
+.eyebrow{
+  font-family:'JetBrains Mono';font-size:0.7rem;letter-spacing:0.16em;
+  color:var(--cyan);text-transform:uppercase;margin-bottom:1rem;
+}
+.section-title{
+  font-family:'Syne';font-size:2.6rem;font-weight:700;margin-bottom:1rem;
+}
+.section-title .hl{color:var(--cyan);}
+.divider{
+  width:45px;height:2px;background:linear-gradient(90deg,var(--cyan),transparent);
+  margin:1rem 0 1.6rem;
+}
+
+/* ============================================================
+   ABOUT
+============================================================ */
+.about{background:var(--bg2);}
+.about-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;
+}
+.about-text p{
+  color:var(--white2);margin-bottom:1.3rem;font-size:1rem;line-height:1.8;
+}
+.value-cards{
+  display:flex;flex-direction:column;gap:1rem;
+}
+.value-card{
+  padding:1.2rem 1.4rem;background:var(--surface);
+  border:1px solid var(--border);border-left:3px solid var(--cyan);
+  border-radius:10px;display:flex;gap:1rem;
+}
+
+/* ============================================================
+   SERVICES
+============================================================ */
+.services{background:var(--bg);}
+.services-grid{
+  margin-top:3rem;display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1px;background:var(--border);border-radius:14px;
+  overflow:hidden;
+}
+.svc{
+  background:var(--bg);padding:2rem 1.5rem;
+}
+.svc-icon{
+  width:42px;height:42px;border-radius:10px;background:var(--cyanSoft);
+  display:flex;align-items:center;justify-content:center;border:1px solid var(--border2);
+}
+.svc-title{
+  font-family:'Syne';font-size:1rem;font-weight:600;margin:0.7rem 0;
+}
+.svc-desc{color:var(--white3);font-size:0.88rem;line-height:1.7;}
+
+/* ============================================================
+   PRICING (NEW SECTION INSERTED HERE)
+============================================================ */
+.pricing{background:var(--bg);}
+.price-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:1.4rem;
+  margin-top:2.5rem;
+}
+.price-card{
+  background:var(--bg3);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:2rem;
+  transition:0.2s;
+}
+.price-card:hover{
+  border-color:var(--cyan);box-shadow:0 0 20px var(--cyanSoft);
+}
+.price-title{
+  font-family:'Syne';font-size:1.3rem;font-weight:700;color:var(--cyan);
+  margin-bottom:0.6rem;
+}
+.price-range{
+  font-size:1.6rem;font-weight:700;color:var(--white);
+  margin-bottom:0.8rem;
+}
+.price-desc{
+  color:var(--white3);line-height:1.7;font-size:0.9rem;
+}
+
+/* ============================================================
+   PROCESS
+============================================================ */
+.process{background:var(--bg2);}
+.process-row{
+  margin-top:3rem;display:grid;
+  grid-template-columns:repeat(4,1fr);
+  border:1px solid var(--border);
+  border-radius:12px;overflow:hidden;
+}
+.step{
+  padding:2rem 1.6rem;background:var(--surface);
+  border-right:1px solid var(--border);
+}
+.step:last-child{border-right:none;}
+.step-title{font-family:'Syne';font-size:1rem;font-weight:600;margin-bottom:0.5rem;}
+.step-desc{color:var(--white3);}
+
+/* ============================================================
+   CASE STUDY
+============================================================ */
+.cs-wrap{
+  display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;
+}
+.cs-text p{color:var(--white2);margin-bottom:1.2rem;}
+.cs-checklist li{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:8px;padding:0.8rem 1rem;color:var(--white2);
+  margin-bottom:0.6rem;list-style:none;
+}
+.cs-panel{
+  background:var(--bg3);border:1px solid var(--border);
+  padding:2.4rem;border-radius:14px;
+}
+.cs-kpis{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
+  background:var(--border);border-radius:10px;overflow:hidden;
+}
+
+/* ============================================================
+   COMPLIANCE
+============================================================ */
+.compliance{background:var(--bg2);}
+.comp-list li{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:8px;padding:0.9rem 1rem;color:var(--white2);
+  margin-bottom:0.6rem;list-style:none;
+}
+
+/* ============================================================
+   ROADMAP
+============================================================ */
+.roadmap-grid{
+  margin-top:3rem;display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1.2rem;
+}
+.phase{
+  background:var(--bg3);padding:1.8rem;border-radius:12px;
+  border:1px solid var(--border);
+}
+.phase-title{font-family:'Syne';font-size:1.1rem;margin-bottom:0.5rem;}
+
+/* ============================================================
+   CONTACT
+============================================================ */
+.contact{background:var(--bg2);}
+.contact-item{
+  display:flex;gap:1rem;margin-bottom:1rem;
+}
+.ci-icon{
+  width:40px;height:40px;background:var(--cyanSoft);
+  border:1px solid var(--border2);border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+}
+.contact-form{
+  background:var(--bg3);border:1px solid var(--border);
+  padding:2.4rem;border-radius:14px;
+}
+
+/* ============================================================
+   FOOTER
+============================================================ */
+.site-footer{
+  text-align:center;padding:2rem 0;background:var(--bg);
+  color:var(--muted);font-size:0.8rem;
+}
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+@media(max-width:950px){
+  .about-grid,.cs-wrap,.comp-wrap,.contact-wrap{
+    grid-template-columns:1fr;
+  }
+  .services-grid{grid-template-columns:1fr 1fr;}
+  .process-row{grid-template-columns:1fr 1fr;}
+  .roadmap-grid{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:650px){
+  .services-grid,.process-row,.roadmap-grid{grid-template-columns:1fr;}
+  .hero h1{font-size:3.2rem;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="grid-bg"></div>
+
+<!-- HEADER -->
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    #
+      <div class="brand-logo">SFS</div>
+      <div>
+        <div class="brand-name">Structured Filing Solutions™</div>
+        <div class="brand-sub">Compliance Infrastructure</div>
+      </div>
+    </a>
+
+    <nav class="nav">
+      #about
+      #services
+      #pricingPricing</a>
+      #process
+      #contact class="cta">Get Started →</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="aurora">
+    <div class="aurora-blob"></div>
+    <div class="aurora-blob"></div>
+    <div class="aurora-blob"></div>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-tag">South African Business Infrastructure</div>
+
+    <h1>Your business,<br><span class="accent">fully operational</span><br>from day one.</h1>
+
+    <p class="hero-sub">
+      Structured Filing Solutions™ handles registration, compliance, and digital onboarding —
+      all delivered through one structured engagement.
+    </p>
+
+    <div class="hero-cta">
+      #servicesExplore Services</a>
+      #casestudyView Case Study</a>
+    </div>
+
+    <div class="hero-metrics">
+      <div class="metric"><div class="metric-val">6+</div><div class="metric-label">Core Services</div></div>
+      <div class="metric"><div class="metric-val">100%</div><div class="metric-label">Compliance Rate</div></div>
+      <div class="metric"><div class="metric-val">ZA</div><div class="metric-label">SA Focused</div></div>
+      <div class="metric"><div class="metric-val">1</div><div class="metric-label">Engagement → Done</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section about">
+  <div class="container">
+    <div class="about-grid">
+
+      <div class="about-text">
+        <div class="eyebrow">Who We Are</div>
+        <h2 class="section-title">Compliance infrastructure<br>for <span class="hl">modern businesses</span></h2>
+        <div class="divider"></div>
+
+        <p>Structured Filing Solutions™ removes the complexity of getting a South African business legally registered and digitally operational.</p>
+        <p>Our methodology is sequential and precise. One engagement. Full delivery.</p>
+        <p>We believe the best business foundation is one you never need to fix.</p>
+      </div>
+
+      <div class="value-cards">
+
+        <div class="value-card">
+          <div class="vc-icon">🎯</div>
+          <div>
+            <div class="vc-title">Accuracy</div>
+            <div class="vc-desc">Zero rejection filings — documentation prepared correctly the first time.</div>
+          </div>
+        </div>
+
+        <div class="value-card">
+          <div class="vc-icon">🔐</div>
+          <div>
+            <div class="vc-title">Compliance</div>
+            <div class="vc-desc">CIPC, Companies Act, BO and POPIA aligned work — audit‑ready delivery.</div>
+          </div>
+        </div>
+
+        <div class="value-card">
+          <div class="vc-icon">⚡</div>
+          <div>
+            <div class="vc-title">Efficiency</div>
+            <div class="vc-desc">One provider. One workflow. One complete setup.</div>
+          </div>
+        </div>
+
+        <div class="value-card">
+          <div class="vc-icon">🛡️</div>
+          <div>
+            <div class="vc-title">Reliability</div>
+            <div class="vc-desc">Transparent communication and documented progress at every step.</div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="section services">
+  <div class="container">
+    <div class="eyebrow">What We Deliver</div>
+    <h2 class="section-title">End‑to‑end <span class="hl">business services</span></h2>
+
+    <div class="services-grid">
+
+      <div class="svc">
+        <div class="svc-icon">🏛️</div>
+        <div class="svc-title">CIPC Company Registration</div>
+        <div class="svc-desc">Full CIPC process including name reservation, documentation and submission.</div>
+      </div>
+
+      <div class="svc">
+        <div class="svc-icon">📄</div>
+        <div class="svc-title">Annual Returns (AR)</div>
+        <div class="svc-desc">Annual Return filing and compliance alignment to avoid deregistration.</div>
+      </div>
+
+      <div class="svc">
+        <div class="svc-icon">👤</div>
+        <div class="svc-title">Beneficial Ownership (BO)</div>
+        <div class="svc-desc">Legislated BO register creation & secure submission.</div>
+      </div>
+
+      <div class="svc">
+        <div class="svc-icon">🌐</div>
+        <div class="svc-title">Domain Registration</div>
+        <div class="svc-desc">Domain search, securing and DNS configuration.</div>
+      </div>
+
+      <div class="svc">
+        <div class="svc-icon">📧</div>
+        <div class="svc-title">Business Email Setup</div>
+        <div class="svc-desc">Professional business email on your chosen domain.</div>
+      </div>
+
+      <div class="svc">
+        <div class="svc-icon">🖥️</div>
+        <div class="svc-title">Website Creation & Hosting</div>
+        <div class="svc-desc">Modern, functional website designed and deployed.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ✅✅✅ PRICING SECTION (INSERTED DIRECTLY AFTER SERVICES) -->
+<section id="pricing" class="section pricing">
   <div class="container">
 
     <div class="eyebrow">// Pricing</div>
@@ -13,108 +553,277 @@
       component of your business foundation — fully compliant, documented, and operational.
     </p>
 
-    <div style="
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:1.2rem;
-    ">
+    <div class="price-grid">
 
-      <!-- Plan 1 -->
-      <div style="
-        background:var(--bg3);
-        border:1px solid var(--border);
-        border-radius:14px;
-        padding:2rem;
-        transition:0.25s;
-      ">
-
-        <h3 style="font-family:'Syne';font-size:1.3rem;margin-bottom:0.6rem;color:var(--cyan);">
-          Business Registration Pack
-        </h3>
-
-        <div style="font-size:1.6rem;font-weight:700;color:var(--white);margin-bottom:0.8rem;">
-          R1,800 – R2,500
-        </div>
-
-        <p style="color:var(--white3);font-size:0.9rem;line-height:1.7;">
+      <div class="price-card">
+        <div class="price-title">Business Registration Pack</div>
+        <div class="price-range">R1,800 – R2,500</div>
+        <div class="price-desc">
           Full CIPC registration, name reservation, MOI, company documents, and Beneficial 
           Ownership submission.
-        </p>
+        </div>
       </div>
 
-      <!-- Plan 2 -->
-      <div style="
-        background:var(--bg3);
-        border:1px solid var(--border);
-        border-radius:14px;
-        padding:2rem;
-        transition:0.25s;
-      ">
-
-        <h3 style="font-family:'Syne';font-size:1.3rem;margin-bottom:0.6rem;color:var(--cyan);">
-          Digital Launch Pack
-        </h3>
-
-        <div style="font-size:1.6rem;font-weight:700;color:var(--white);margin-bottom:0.8rem;">
-          R600 – R1,000 once‑off
+      <div class="price-card">
+        <div class="price-title">Digital Launch Pack</div>
+        <div class="price-range">R600 – R1,000 once‑off</div>
+        <div class="price-desc">
+          Domain registration, DNS setup, and business email configuration.<br><br>
+          <span style="color:var(--cyan);">Hosting: R50 – R150 / month</span>
         </div>
-
-        <p style="color:var(--white3);font-size:0.9rem;line-height:1.7;margin-bottom:0.6rem;">
-          Domain registration, DNS setup, and business email configuration.
-        </p>
-
-        <p style="color:var(--cyan);font-size:0.88rem;">
-          Hosting: R50 – R150 / month
-        </p>
       </div>
 
-      <!-- Plan 3 -->
-      <div style="
-        background:var(--bg3);
-        border:1px solid var(--border);
-        border-radius:14px;
-        padding:2rem;
-        transition:0.25s;
-      ">
-
-        <h3 style="font-family:'Syne';font-size:1.3rem;margin-bottom:0.6rem;color:var(--cyan);">
-          Filing Structure Setup
-        </h3>
-
-        <div style="font-size:1.6rem;font-weight:700;color:var(--white);margin-bottom:0.8rem;">
-          R500
-        </div>
-
-        <p style="color:var(--white3);font-size:0.9rem;line-height:1.7;">
+      <div class="price-card">
+        <div class="price-title">Filing Structure Setup</div>
+        <div class="price-range">R500</div>
+        <div class="price-desc">
           Internal folder architecture for operations, documentation templates, 
           and audit‑ready structure.
-        </p>
+        </div>
       </div>
 
-      <!-- Plan 4 -->
-      <div style="
-        background:var(--bg3);
-        border:1px solid var(--border);
-        border-radius:14px;
-        padding:2rem;
-        transition:0.25s;
-      ">
-
-        <h3 style="font-family:'Syne';font-size:1.3rem;margin-bottom:0.6rem;color:var(--cyan);">
-          Compliance SOP + Filing Pack
-        </h3>
-
-        <div style="font-size:1.6rem;font-weight:700;color:var(--white);margin-bottom:0.8rem;">
-          R1,200
-        </div>
-
-        <p style="color:var(--white3);font-size:0.9rem;line-height:1.7;">
+      <div class="price-card">
+        <div class="price-title">Compliance SOP + Filing Pack</div>
+        <div class="price-range">R1,200</div>
+        <div class="price-desc">
           Shareable filing structure, SOP documents, workflows for AR and BO updates, 
           and compliance‑ready templates.
-        </p>
+        </div>
       </div>
 
     </div>
 
   </div>
 </section>
+
+<!-- PROCESS -->
+<section id="process" class="section process">
+  <div class="container">
+    <div class="eyebrow">How It Works</div>
+    <h2 class="section-title">Zero to operational — <span class="hl">four steps</span></h2>
+
+    <div class="process-row">
+      <div class="step">
+        <div class="step-title">1 — Intake & Scoping</div>
+        <div class="step-desc">We collect all necessary details and define your full engagement scope.</div>
+      </div>
+
+      <div class="step">
+        <div class="step-title">2 — Legal Registration</div>
+        <div class="step-desc">CIPC processes, Annual Returns and BO submissions handled.</div>
+      </div>
+
+      <div class="step">
+        <div class="step-title">3 — Digital Onboarding</div>
+        <div class="step-desc">Domain, email, and website setup in a structured pipeline.</div>
+      </div>
+
+      <div class="step">
+        <div class="step-title">4 — Handover & Support</div>
+        <div class="step-desc">You receive full documentation, credentials and compliance reminders.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDY -->
+<section id="casestudy" class="section casestudy">
+  <div class="container">
+    <div class="cs-wrap">
+
+      <div class="cs-text">
+        <div class="eyebrow">Case Study</div>
+        <h2 class="section-title">Illuminate Hope —<br><span class="hl">full deployment</span></h2>
+        <div class="divider"></div>
+
+        <p>We delivered every foundational step — from legal registration to digital activation.</p>
+
+        <ul class="cs-checklist">
+          <li>CIPC registration complete</li>
+          <li>Annual Return filed</li>
+          <li>BO Register submitted</li>
+          <li>Domain secured & DNS configured</li>
+          <li>Business email ready</li>
+          <li>Website designed & launched</li>
+        </ul>
+      </div>
+
+      <div class="cs-panel">
+        <h3>Project Summary</h3>
+        <p>Illuminate Hope Psychosocial Services required a structured, end‑to‑end business foundation. Delivered in one engagement.</p>
+
+        <div class="cs-kpis">
+          <div class="kpi"><div class="kpi-val">6</div><div class="kpi-label">Services</div></div>
+          <div class="kpi"><div class="kpi-val">1</div><div class="kpi-label">Engagement</div></div>
+          <div class="kpi"><div class="kpi-val">✓</div><div class="kpi-label">Compliant</div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- COMPLIANCE -->
+<section id="compliance" class="section compliance">
+  <div class="container">
+
+    <div class="eyebrow">Regulatory Standards</div>
+    <h2 class="section-title">Built for <span class="hl">compliance</span></h2>
+    <div class="divider"></div>
+
+    <ul class="comp-list">
+      <li>CIPC Registered Processes</li>
+      <li>Companies Act 71 of 2008 Alignment</li>
+      <li>General Laws Amendment Act — BO Compliance</li>
+      <li>POPIA-Compliant Data Handling</li>
+      <li>SARS eFiling Integration (Phase 2)</li>
+    </ul>
+
+  </div>
+</section>
+
+<!-- ROADMAP -->
+<section id="roadmap" class="section roadmap">
+  <div class="container">
+
+    <div class="eyebrow">Where We're Headed</div>
+    <h2 class="section-title">Service <span class="hl">Roadmap</span></h2>
+
+    <div class="roadmap-grid">
+
+      <div class="phase">
+        <div class="phase-title">Phase 01 — Live</div>
+        <ul class="phase-items">
+          <li>CIPC Registration</li>
+          <li>Annual Returns</li>
+          <li>BO Submission</li>
+          <li>Domain Setup</li>
+          <li>Email Setup</li>
+          <li>Website Launch</li>
+        </ul>
+      </div>
+
+      <div class="phase">
+        <div class="phase-title">Phase 02 — In Development</div>
+        <ul class="phase-items">
+          <li>SARS eFiling</li>
+          <li>Income Tax</li>
+          <li>VAT Support</li>
+          <li>B-BBEE Affidavits</li>
+          <li>UIF / PAYE</li>
+        </ul>
+      </div>
+
+      <div class="phase">
+        <div class="phase-title">Phase 03 — Planned</div>
+        <ul class="phase-items">
+          <li>Client Portal</li>
+          <li>AR Reminders</li>
+          <li>Agency Mode</li>
+          <li>Document Storage</li>
+          <li>HR Workflow Docs</li>
+          <li>Bank Partner Network</li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section contact">
+  <div class="container">
+
+    <div class="contact-wrap">
+
+      <div class="contact-info">
+        <div class="eyebrow">Get In Touch</div>
+        <h2 class="section-title">Ready to build your<br><span class="hl">business foundation?</span></h2>
+        <div class="divider"></div>
+
+        <p>Whether you’re starting or formalizing — we begin your setup within 24 hours.</p>
+
+        <div class="contact-item">
+          <div class="ci-icon">✉️</div>
+          <div>
+            <div class="ci-label">Email</div>
+            <div class="ci-val">info@structuredfilingsolutions.co.za</div>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="ci-icon">📱</div>
+          <div>
+            <div class="ci-label">Phone / WhatsApp</div>
+            <div class="ci-val">+27 — available on request</div>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="ci-icon">📍</div>
+          <div>
+            <div class="ci-label">Location</div>
+            <div class="ci-val">KwaZulu‑Natal, South Africa</div>
+          </div>
+        </div>
+
+      </div>
+
+      <form class="contact-form">
+        <h3>Request a Consultation</h3>
+
+        <div class="fg">
+          <label>Full Name</label>
+          <input type="text" required placeholder="Your full name">
+        </div>
+
+        <div class="fg">
+          <label>Email Address</label>
+          <input type="email" required placeholder="you@example.com">
+        </div>
+
+        <div class="fg">
+          <label>Service Needed</label>
+          <select>
+            <option>Select a service...</option>
+            <option>Full Business Launch</option>
+            <option>CIPC Registration</option>
+            <option>Annual Returns / BO</option>
+            <option>Domain + Email</option>
+            <option>Website Creation</option>
+            <option>Tax Registration (Phase 2)</option>
+          </select>
+        </div>
+
+        <div class="fg">
+          <label>Your Message</label>
+          <textarea rows="4" placeholder="Tell us what you need..."></textarea>
+        </div>
+
+        <button class="form-submit" type="submit">Send Enquiry →</button>
+      </form>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  © <span id="yr"></span> Structured Filing Solutions™ — All rights reserved.
+</footer>
+
+<script>
+// Dynamic Year
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+// Sticky header
+const hdr = document.getElementById('siteHeader');
+window.addEventListener('scroll', () => {
+  hdr.classList.toggle('scrolled', window.scrollY > 50);
+});
+</script>
+
+</body>
+</html>
