@@ -1,1 +1,8 @@
-
+body { background:#04070f; color:#fff; font-family:Arial; margin:0; }
+.site-header { padding:1rem; background:#08111f; text-align:center; font-size:1.4rem; }
+.hero { padding:6rem 2rem; text-align:center; }
+.accent { color:#00d2ff; }
+.btn { display:inline-block; padding:0.8rem 1.6rem; background:#00d2ff; color:#000; text-decoration:none; border-radius:6px; margin-top:1rem; }
+.section { padding:4rem 2rem; }
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1rem; }
+.card { background:#0a1528; padding:1.5rem; border:1px solid #00d2ff33; border-radius:10px; text-align:center; }
