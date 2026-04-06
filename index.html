@@ -1,35 +1,72 @@
-
 <!DOCTYPE html>
-<html lang='en'>
+<html lang="en">
 <head>
-  <meta charset='UTF-8'/>
-  <meta name='viewport' content='width=device-width, initial-scale=1'/>
-  <title>SFS Futuristic Neon</title>
-  <link rel='stylesheet' href='css/style.css'/>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Structured Filing Solutions™ — Business Compliance & Digital Setup</title>
+
+<link rel="stylesheet" href="css/style.css" />
+
 </head>
 <body>
-  <header class='site-header'>
-    <div class='brand'>SFS Futuristic Neon</div>
-  </header>
 
-  <section class='hero'>
-    <h1>Your business, <span class='accent'>fully operational</span></h1>
-    <p>Compliance, digital onboarding, and legal setup—done right.</p>
-    <a class='btn' href='#services'>Explore Services</a>
-  </section>
+<header class="site-header">
+  <div class="brand">Structured Filing Solutions™</div>
+</header>
 
-  <section id='services' class='section'>
-    <h2>Services</h2>
-    <div class='grid'>
-      <div class='card'>CIPC Registration</div>
-      <div class='card'>Annual Returns</div>
-      <div class='card'>Beneficial Ownership</div>
-      <div class='card'>Domain Registration</div>
-      <div class='card'>Business Email Setup</div>
-      <div class='card'>Website Creation</div>
+<section class="hero">
+  <h1>Your business, <span class="accent">fully operational</span></h1>
+  <p>End‑to‑end registration, compliance and digital onboarding — delivered as one structured engagement.</p>
+  <a class="btn" href="#services">Explore Services</a>
+</section>
+
+<section id="services" class="section">
+  <h2>Our Core Services</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <h3>CIPC Company Registration</h3>
+      <p>Full company registration, name reservation, documentation and CIPC filing.</p>
     </div>
-  </section>
 
-  <script src='js/app.js'></script>
+    <div class="card">
+      <h3>Annual Returns (AR)</h3>
+      <p>Annual Return tracking and submissions to keep your business compliant.</p>
+    </div>
+
+    <div class="card">
+      <h3>Beneficial Ownership (BO)</h3>
+      <p>BO Register creation and submission in line with the General Laws Amendment Act.</p>
+    </div>
+
+    <div class="card">
+      <h3>Domain Registration</h3>
+      <p>Secure your business domain and configure DNS for a professional web presence.</p>
+    </div>
+
+    <div class="card">
+      <h3>Business Email Setup</h3>
+      <p>Full setup of your company email services using your custom domain.</p>
+    </div>
+
+    <div class="card">
+      <h3>Website Creation & Hosting</h3>
+      <p>Design, build, and launch a modern business website ready for clients.</p>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <p>© <span id="year"></span> Structured Filing Solutions™. All rights reserved.</p>
+</footer>
+
+<script src="js/app.js"></script>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
+``
