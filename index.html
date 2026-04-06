@@ -1,109 +1,120 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- PRICING SECTION -->
+<section id="pricing" class="section pricing" style="background:var(--bg);">
+  <div class="container">
 
-<title>Structured Filing Solutions™ — Compliance Infrastructure for Modern Business</title>
-<meta name="description" content="End-to-end South African business registration, compliance, and digital onboarding. One structured engagement from idea to fully operational.">
+    <div class="eyebrow">// Pricing</div>
+    <h2 class="section-title">
+      Transparent <span class="hl">pricing</span> for real business setup
+    </h2>
+    <div class="divider"></div>
 
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Outfit:wght@300;400;500&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <p style="color:var(--white2);max-width:560px;line-height:1.85;margin-bottom:3rem;">
+      Clear, structured pricing with no hidden fees. Each service is delivered as a complete 
+      component of your business foundation — fully compliant, documented, and operational.
+    </p>
 
-<style>
-/* ============================================================
-   ROOT THEME — FUTURISTIC NEON
-============================================================ */
-:root{
-  --bg:#040810;
-  --bg2:#070d1a;
-  --bg3:#0b1221;
-  --surface:rgba(255,255,255,0.04);
-  --surface2:rgba(255,255,255,0.08);
-  --border:rgba(255,255,255,0.1);
-  --border2:rgba(0,210,255,0.3);
-  --cyan:#00d2ff;
-  --cyan2:#00a4d6;
-  --cyanSoft:rgba(0,210,255,0.07);
-  --white:#f0f4f7;
-  --white2:rgba(240,244,248,0.7);
-  --white3:rgba(240,244,248,0.4);
-  --muted:rgba(240,244,248,0.25);
-  --radius:14px;
-  --transition:0.25s ease;
-}
+    <div style="
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:1.2rem;
+    ">
 
-/* RESET */
-*,*::before,*::after{box-sizing:border-box;padding:0;margin:0;}
-body{
-  font-family:'Outfit',sans-serif;
-  background:var(--bg);
-  color:var(--white);
-  line-height:1.7;
-  overflow-x:hidden;
-}
+      <!-- Plan 1 -->
+      <div style="
+        background:var(--bg3);
+        border:1px solid var(--border);
+        border-radius:14px;
+        padding:2rem;
+        transition:0.25s;
+      ">
 
-/* Scrollbar */
-::-webkit-scrollbar{width:6px;}
-::-webkit-scrollbar-thumb{background:var(--cyan2);border-radius:4px;}
+        <h3 style="font-family:'Syne';font-size:1.3rem;margin-bottom:0.6rem;color:var(--cyan);">
+          Business Registration Pack
+        </h3>
 
-/* Background grid */
-.grid-bg{
-  position:fixed;inset:0;z-index:0;pointer-events:none;
-  background-image:
-    linear-gradient(rgba(0,210,255,0.04) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(0,210,255,0.04) 1px,transparent 1px);
-  background-size:80px 80px;
-}
+        <div style="font-size:1.6rem;font-weight:700;color:var(--white);margin-bottom:0.8rem;">
+          R1,800 – R2,500
+        </div>
 
-/* ============================================================
-   HEADER
-============================================================ */
-.site-header{
-  position:fixed;top:0;left:0;right:0;
-  padding:0.8rem 0;z-index:50;
-  transition:background 0.3s ease, backdrop-filter 0.3s ease;
-}
-.site-header.scrolled{
-  background:rgba(4,8,16,0.8);
-  backdrop-filter:blur(15px);
-  border-bottom:1px solid var(--border);
-}
-.header-inner{
-  max-width:1400px;margin:0 auto;padding:0 5%;
-  display:flex;justify-content:space-between;align-items:center;
-}
-.brand-logo{
-  width:38px;height:38px;
-  border-radius:10px;
-  background:linear-gradient(135deg,var(--cyan),var(--cyan2));
-  display:flex;align-items:center;justify-content:center;
-  font-family:'JetBrains Mono';font-size:0.8rem;font-weight:700;
-  color:var(--bg);
-}
-.brand-name{font-family:'Syne';font-size:1rem;font-weight:700;}
-.brand-sub{
-  font-family:'JetBrains Mono';font-size:0.55rem;color:var(--cyan);
-  letter-spacing:0.14em;text-transform:uppercase;
-}
-.nav a{
-  color:var(--white3);text-decoration:none;
-  padding:0.4rem 0.8rem;font-size:0.8rem;border-radius:6px;
-}
-.nav a:hover{color:var(--white);background:var(--surface);}
-.nav .cta{
-  margin-left:0.6rem;
-  background:var(--cyan);color:var(--bg);
-  font-weight:600;border-radius:8px;
-  padding:0.5rem 1rem;
-}
+        <p style="color:var(--white3);font-size:0.9rem;line-height:1.7;">
+          Full CIPC registration, name reservation, MOI, company documents, and Beneficial 
+          Ownership submission.
+        </p>
+      </div>
 
-/* ============================================================
-   HERO
-============================================================ */
-.hero{
-  min-height:100vh;
-  display:flex;align-items:center;
-  position:relative;overflow:hidden;
-}
-.aurora-blob{
-  position:absolute;border-radius:50%;filter:blur(85px);
+      <!-- Plan 2 -->
+      <div style="
+        background:var(--bg3);
+        border:1px solid var(--border);
+        border-radius:14px;
+        padding:2rem;
+        transition:0.25s;
+      ">
+
+        <h3 style="font-family:'Syne';font-size:1.3rem;margin-bottom:0.6rem;color:var(--cyan);">
+          Digital Launch Pack
+        </h3>
+
+        <div style="font-size:1.6rem;font-weight:700;color:var(--white);margin-bottom:0.8rem;">
+          R600 – R1,000 once‑off
+        </div>
+
+        <p style="color:var(--white3);font-size:0.9rem;line-height:1.7;margin-bottom:0.6rem;">
+          Domain registration, DNS setup, and business email configuration.
+        </p>
+
+        <p style="color:var(--cyan);font-size:0.88rem;">
+          Hosting: R50 – R150 / month
+        </p>
+      </div>
+
+      <!-- Plan 3 -->
+      <div style="
+        background:var(--bg3);
+        border:1px solid var(--border);
+        border-radius:14px;
+        padding:2rem;
+        transition:0.25s;
+      ">
+
+        <h3 style="font-family:'Syne';font-size:1.3rem;margin-bottom:0.6rem;color:var(--cyan);">
+          Filing Structure Setup
+        </h3>
+
+        <div style="font-size:1.6rem;font-weight:700;color:var(--white);margin-bottom:0.8rem;">
+          R500
+        </div>
+
+        <p style="color:var(--white3);font-size:0.9rem;line-height:1.7;">
+          Internal folder architecture for operations, documentation templates, 
+          and audit‑ready structure.
+        </p>
+      </div>
+
+      <!-- Plan 4 -->
+      <div style="
+        background:var(--bg3);
+        border:1px solid var(--border);
+        border-radius:14px;
+        padding:2rem;
+        transition:0.25s;
+      ">
+
+        <h3 style="font-family:'Syne';font-size:1.3rem;margin-bottom:0.6rem;color:var(--cyan);">
+          Compliance SOP + Filing Pack
+        </h3>
+
+        <div style="font-size:1.6rem;font-weight:700;color:var(--white);margin-bottom:0.8rem;">
+          R1,200
+        </div>
+
+        <p style="color:var(--white3);font-size:0.9rem;line-height:1.7;">
+          Shareable filing structure, SOP documents, workflows for AR and BO updates, 
+          and compliance‑ready templates.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
